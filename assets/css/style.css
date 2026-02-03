@@ -1154,3 +1154,334 @@ footer {
 .contact-value a:hover {
     color: var(--ub-red-cta);
 }
+
+
+/* --- About Page Refinement (Premium V2) --- */
+
+/* Hero Section */
+.about-hero {
+    position: relative;
+    background-color: #f4ecdc;
+    padding: 100px 0 120px;
+    margin-bottom: 80px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Subtle background texture for Hero */
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d1cbb8' fill-opacity='0.15' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.6;
+}
+
+.about-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 16px;
+    color: var(--ub-green-dark);
+    position: relative;
+    z-index: 1;
+}
+
+.about-hero p {
+    font-size: 1.3rem;
+    color: var(--ub-text-muted);
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Main Content Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+/* Image with offset decoration */
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.4s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.02);
+}
+
+/* Decorative backdrop box */
+.about-image::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 80%;
+    height: 80%;
+    background-color: var(--ub-yellow-accent);
+    border-radius: var(--border-radius-lg);
+    z-index: 1;
+    opacity: 0.2;
+    transition: all 0.4s ease;
+}
+
+.about-image:hover::after {
+    bottom: -25px;
+    right: -25px;
+}
+
+/* Content Typography */
+.about-content h2 {
+    color: var(--ub-green-dark);
+    margin-bottom: 30px;
+    font-size: 2.6rem;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.about-content p {
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+    color: var(--ub-text-muted);
+    line-height: 1.8;
+}
+
+.about-subheading {
+    margin: 40px 0 30px;
+    font-size: 1.8rem;
+    color: var(--ub-text-dark);
+    position: relative;
+    display: inline-block;
+}
+
+.about-subheading::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: var(--ub-yellow-accent);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+/* Values Grid */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.value-card {
+    background: white;
+    padding: 25px 20px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    height: 100%;
+}
+
+.value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    border-color: rgba(68, 81, 53, 0.1);
+}
+
+.value-icon {
+    font-size: 1.8rem;
+    color: var(--ub-green-light);
+    margin-bottom: 18px;
+    background: #fcfbf7;
+    width: 64px;
+    height: 64px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.value-card:hover .value-icon {
+    background: var(--ub-green-dark);
+    color: white;
+    transform: scale(1.1);
+}
+
+.value-title {
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--ub-green-dark);
+    font-size: 1.1rem;
+}
+
+/* Award Section */
+.award-section {
+    padding-bottom: 120px;
+}
+
+.award-card {
+    background: white;
+    padding: 80px 60px;
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(230, 156, 0, 0.2);
+    /* Gold tint border */
+    text-align: center;
+    max-width: 950px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gold corner accent */
+.award-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--ub-yellow-accent), #f9d970, var(--ub-yellow-accent));
+}
+
+.award-icon {
+    font-size: 3rem;
+    color: var(--ub-yellow-accent);
+    margin-bottom: 25px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.award-card h2 {
+    color: var(--ub-text-dark);
+    margin-bottom: 35px;
+    font-size: 2.6rem;
+    background: -webkit-linear-gradient(45deg, var(--ub-green-dark), var(--ub-green-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.award-card p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 24px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.award-quote {
+    color: var(--ub-green-dark);
+    font-family: var(--font-heading);
+    font-style: italic;
+    margin: 50px 0 30px;
+    font-size: 1.6rem;
+    position: relative;
+    display: inline-block;
+}
+
+.award-quote::before,
+.award-quote::after {
+    content: '✨';
+    font-size: 1.2rem;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.award-footer {
+    font-weight: 700;
+    color: var(--ub-text-dark);
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Animation Utilities */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .about-image {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 60px 0 80px;
+    }
+
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        /* Stack values on mobile */
+        gap: 15px;
+    }
+
+    .award-card {
+        padding: 50px 25px;
+    }
+
+    .award-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+    }
+}
