@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Uncle Brownie Nanpara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Uncle Brownie Logo">
+            </a>
+            <nav class="desktop-nav hidden-mobile">
+                <ul class="flex" style="gap: 30px;">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+916262707048" class="btn btn-primary hidden-mobile"><i class="fa-solid fa-phone"></i> Call
+                Order</a>
+            <div class="mobile-toggle hidden-desktop"><i class="fa-solid fa-bars"
+                    style="font-size: 1.5rem; color: var(--ub-green-dark);"></i></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="text-center" style="background-color: #f4ecdc; padding: 60px 0;">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>We'd love to hear from you</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                    <!-- Contact Info -->
+                    <div>
+                        <div
+                            style="background: white; padding: 30px; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); margin-bottom: 20px;">
+                            <h3 style="margin-bottom: 20px; color: var(--color-primary);">Get in Touch</h3>
+                            <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                                <i class="fa-solid fa-location-dot"
+                                    style="font-size: 1.5rem; color: var(--color-accent);"></i>
+                                <div>
+                                    <h4>Address</h4>
+                                    <p class="text-muted">Opposite Old Hospital, Nanpara, Uttar Pradesh, 271865</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                                <i class="fa-solid fa-phone" style="font-size: 1.5rem; color: var(--color-accent);"></i>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p class="text-muted"><a href="tel:+916262707048">+91 62627 07048</a></p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 15px;">
+                                <i class="fa-solid fa-clock" style="font-size: 1.5rem; color: var(--color-accent);"></i>
+                                <div>
+                                    <h4>Opening Hours</h4>
+                                    <p class="text-muted">Mon - Sun: 10:00 AM - 10:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div style="display: grid; gap: 10px;">
+                            <a href="https://wa.me/916262707048" class="btn btn-whatsapp btn-block"><i
+                                    class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+                            <a href="tel:+916262707048" class="btn btn-primary btn-block"><i
+                                    class="fa-solid fa-phone"></i> Call Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="map-responsive" style="height: 400px; border-radius: var(--border-radius-md);">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14164.06286782841!2d81.498457!3d27.867497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3999a037b0847b2b%3A0x8e83160408542c3!2sNanpara%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                            allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="mobile-bottom-nav">
+        <a href="index.html"><i class="fa-solid fa-home"></i><span>Home</span></a>
+        <a href="menu.html"><i class="fa-solid fa-utensils"></i><span>Menu</span></a>
+        <a href="https://wa.me/916262707048" class="float-order"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="contact.html" class="active"><i class="fa-solid fa-location-dot"></i><span>Visit</span></a>
+        <a href="tel:+916262707048"><i class="fa-solid fa-phone"></i><span>Call</span></a>
+    </div>
+
+    <footer style="color: white; padding: 60px 0 120px;">
+        <div class="container text-center">
+            <img src="assets/images/logo.png" alt="Uncle Brownie"
+                style="height: 60px; margin: 0 auto 20px; filter: brightness(0) invert(1);">
+            <h3 style="color: white;">Uncle Brownie</h3>
+            <p>Nanpara, Uttar Pradesh</p>
+            <p style="margin-top: 20px; font-size: 0.9rem; color: rgba(255,255,255,0.6);">&copy; 2026 Uncle Brownie. All
+                rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

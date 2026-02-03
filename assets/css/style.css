@@ -1,0 +1,857 @@
+/* 
+* Uncle Brownie - Main Stylesheet
+* Fixed & Consolidated Version
+*/
+
+:root {
+    /* --- Brand Palette (New) --- */
+    --ub-green-dark: #445135;
+    --ub-green-light: #7f8a3b;
+    --ub-red-cta: #e26d63;
+    --ub-yellow-accent: #e69c00;
+    --ub-bg-cream: #f9f8f3;
+    --ub-text-dark: #1f1f1f;
+    --ub-text-muted: #6b6b6b;
+    --ub-white: #ffffff;
+
+    /* --- Legacy Variable Mapping (For HTML Compatibility) --- */
+    --color-primary: var(--ub-green-dark);
+    --color-primary-dark: #2d3625;
+    /* Darker green for hover/active */
+    --color-secondary: var(--ub-green-light);
+    --color-accent: var(--ub-red-cta);
+    --color-accent-hover: #d15b51;
+    --color-bg-body: var(--ub-bg-cream);
+    --color-text-main: var(--ub-text-dark);
+    --color-text-muted: var(--ub-text-muted);
+    --color-whatsapp: #25D366;
+    --color-whatsapp-dark: #128C7E;
+
+    /* --- UI Tokens --- */
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 24px;
+    --ub-radius-md: var(--border-radius-md);
+    /* Alias */
+
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.1);
+    --ub-shadow-soft: var(--shadow-md);
+    /* Alias */
+    --ub-shadow-cta: 0 10px 25px rgba(226, 109, 99, 0.4);
+
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --header-height: 90px;
+    --container-width: 1200px;
+}
+
+/* --- Reset & Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg-body);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-bottom: 80px;
+    /* Space for sticky mobile nav */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* --- Utility Classes --- */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+}
+
+.hidden-mobile {
+    display: block;
+}
+
+.hidden-desktop {
+    display: none;
+}
+
+/* New Spacing Utility */
+.section-padding {
+    padding: 100px 0;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    gap: 10px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: white;
+    box-shadow: var(--ub-shadow-cta);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(226, 109, 99, 0.45);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 8px 20px rgba(68, 81, 53, 0.25);
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    background-color: var(--color-whatsapp);
+    color: white;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--color-whatsapp-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(37, 211, 102, 0.4);
+}
+
+.btn-block {
+    display: flex;
+    width: 100%;
+}
+
+/* --- Header --- */
+.header {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    flex-shrink: 0;
+    /* Prevent logo shrinking */
+    margin-right: 40px;
+    /* Base spacing */
+}
+
+.logo img {
+    height: 60px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.05));
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+.desktop-nav {
+    flex-grow: 1;
+    /* Allow nav to take available space */
+    display: flex;
+    justify-content: center;
+    /* Center the links */
+}
+
+.desktop-nav ul {
+    display: flex;
+    gap: 50px;
+    /* Big premium spacing */
+    align-items: center;
+}
+
+.desktop-nav a {
+    font-weight: 700;
+    color: var(--color-text-main);
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    white-space: nowrap;
+    /* Prevent breaking */
+}
+
+/* Subtle dot indicator instead of background for cleaner look */
+.desktop-nav a.active::after,
+.desktop-nav a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--ub-red-cta);
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.desktop-nav a:hover {
+    color: var(--ub-red-cta);
+    background-color: transparent;
+    /* Remove the fill style */
+}
+
+.desktop-nav a.active {
+    color: var(--color-primary);
+}
+
+/* --- Mobile Nav/Header Tweaks --- */
+@media (max-width: 768px) {
+    .hidden-mobile {
+        display: none !important;
+    }
+
+    .hidden-desktop {
+        display: block !important;
+    }
+
+    :root {
+        --header-height: 70px;
+    }
+
+    /* Center header content strictly on mobile */
+    .header .container {
+        justify-content: center;
+        padding: 0 15px;
+    }
+
+    .logo {
+        margin-right: 0 !important;
+        /* Reset desktop margin */
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Slightly larger logo for brand presence since it's alone */
+    .logo img {
+        height: 50px;
+    }
+
+    /* Remove standard padding bottom on body potentially? No, keep it */
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    /* Massive top padding to push content down comfortably */
+    padding: 220px 20px 140px;
+    margin-top: -90px;
+    /* Pull behind header */
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    color: #fff !important;
+    font-size: 3.5rem;
+    margin-bottom: 24px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    line-height: 1.15;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Hero Button Overrides for visual dominance */
+.hero .btn-whatsapp {
+    padding: 16px 36px;
+    font-size: 1.1rem;
+    border: 2px solid transparent;
+}
+
+.hero .btn-primary {
+    /* Outline style rewrite for Call button in Hero */
+    background-color: transparent !important;
+    border: 2px solid white !important;
+    box-shadow: none !important;
+}
+
+.hero .btn-primary:hover {
+    background-color: white !important;
+    color: var(--color-primary) !important;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero {
+        padding: 140px 20px 100px;
+    }
+
+    .hero .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Stack buttons full width on mobile */
+}
+
+/* --- Trust Section --- */
+.trust-section {
+    background-color: var(--ub-white);
+    padding: 100px 0;
+    /* More breathing room */
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.03);
+    position: relative;
+    z-index: 10;
+    border-radius: 40px 40px 0 0;
+    /* Premium curve */
+    margin-top: -60px;
+    /* Slight more overlap */
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.trust-item {
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.trust-item:hover {
+    transform: translateY(-10px);
+}
+
+.trust-item i {
+    font-size: 2.8rem;
+    color: var(--ub-green-light);
+    margin-bottom: 16px;
+    filter: drop-shadow(0 4px 8px rgba(127, 138, 59, 0.2));
+}
+
+.trust-item h3 {
+    font-size: 1.1rem;
+    color: var(--ub-green-dark);
+    margin-bottom: 8px;
+}
+
+.trust-item p {
+    font-size: 0.9rem;
+    color: var(--ub-text-muted);
+}
+
+/* --- Menu Section --- */
+.menu-section {
+    background-color: var(--ub-bg-cream);
+    padding: 120px 0;
+    /* Big open space */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 80px;
+    /* More space before grid */
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--ub-green-dark);
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: var(--ub-green-light);
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.menu-card {
+    background: var(--ub-white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+}
+
+.menu-img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-card:hover .menu-img {
+    transform: scale(1.05);
+}
+
+.menu-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.menu-title {
+    font-size: 1.35rem;
+    margin-bottom: 8px;
+    color: var(--ub-text-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    line-height: 1.3;
+    gap: 10px;
+}
+
+.menu-description {
+    font-size: 0.95rem;
+    color: var(--ub-text-muted);
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.menu-price {
+    color: var(--ub-red-cta);
+    font-weight: 800;
+    font-size: 1.25rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* --- Reviews --- */
+.review-card {
+    background: var(--ub-white);
+    padding: 30px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    text-align: left;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.review-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #fcf1f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--ub-red-cta);
+    font-size: 1.1rem;
+}
+
+.stars {
+    color: var(--ub-yellow-accent);
+    letter-spacing: 2px;
+}
+
+/* --- Location Map --- */
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 30px;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 0;
+}
+
+/* --- Mobile Bottom Nav --- */
+.mobile-bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--ub-white);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    padding: 12px 0;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+@media (max-width: 768px) {
+    .mobile-bottom-nav {
+        display: flex;
+    }
+}
+
+.mobile-bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    gap: 6px;
+}
+
+.mobile-bottom-nav a.active {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.mobile-bottom-nav i {
+    font-size: 1.4rem;
+}
+
+/* Floating Order Button */
+.mobile-bottom-nav .float-order {
+    background-color: var(--ub-green-light);
+    color: white;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -45px;
+    border: 6px solid var(--ub-bg-cream);
+    box-shadow: 0 8px 20px rgba(68, 81, 53, 0.4);
+}
+
+.mobile-bottom-nav .float-order i {
+    font-size: 2.2rem;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #2c241b;
+    color: white;
+    padding-top: 80px;
+    border-top: 5px solid var(--ub-green-dark);
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 20px;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.footer-title {
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+    color: var(--ub-yellow-accent);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.footer-links li {
+    margin-bottom: 16px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links a:hover {
+    color: var(--ub-yellow-accent);
+    transform: translateX(5px);
+}
+
+.footer-contact li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    align-items: flex-start;
+}
+
+.footer-bottom {
+    background-color: #1a1510;
+    padding: 30px 0 110px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (min-width: 769px) {
+    .footer-bottom {
+        padding-bottom: 30px;
+    }
+}
+
+/* --- Final CTA Section --- */
+.final-cta {
+    background: linear-gradient(135deg, var(--ub-green-dark) 0%, #2d3625 100%);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Abstract Background Shapes */
+.final-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.final-cta h2 {
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.final-cta p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.final-cta .btn-whatsapp {
+    background: white;
+    color: var(--color-whatsapp-dark);
+    font-weight: 800;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.final-cta .btn-whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    background: #f0fdf4;
+    /* Slight green tint on hover */
+}
+
+.final-cta .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: white;
+}
+
+.final-cta .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-3px);
+}
+
+/* --- Buttons Tweaks --- */
+.btn {
+    padding: 14px 32px;
+    font-size: 1.05rem;
+    letter-spacing: 0.3px;
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    /* Vibrant WhatsApp Green */
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+    font-weight: 700;
+}
+
+.btn-whatsapp:hover {
+    background-color: #20bd5a;
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+    transform: translateY(-2px);
+}
+
+/* --- Size Selector (Radio Buttons) --- */
+.size-selector {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    background-color: #f8f9fa;
+    padding: 6px;
+    border-radius: 60px;
+    /* Capsule container */
+}
+
+.size-option {
+    position: relative;
+    cursor: pointer;
+    flex: 1;
+}
+
+.size-option input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.size-option span {
+    display: block;
+    text-align: center;
+    padding: 12px 0;
+    background-color: transparent;
+    /* Clean look */
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ub-text-muted);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.size-option input:checked+span {
+    background-color: var(--ub-red-cta);
+    color: white;
+    box-shadow: 0 4px 12px rgba(226, 109, 99, 0.3);
+    transform: scale(1.05);
+}
+
+.size-option:hover span {
+    color: var(--ub-text-dark);
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.size-option input:checked:hover+span {
+    background-color: var(--ub-red-cta);
+    color: white;
+}
