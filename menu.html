@@ -31,7 +31,7 @@
             </a>
 
             <nav class="desktop-nav hidden-mobile">
-                <ul class="flex" style="gap: 30px;">
+                <ul class="flex">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="menu.html" class="active">Menu</a></li>
                     <li><a href="about.html">About</a></li>
@@ -43,9 +43,7 @@
                 <i class="fa-solid fa-phone"></i> Call Order
             </a>
 
-            <div class="mobile-toggle hidden-desktop">
-                <i class="fa-solid fa-bars" style="font-size: 1.5rem; color: var(--ub-green-dark);"></i>
-            </div>
+
         </div>
     </header>
 
@@ -58,32 +56,33 @@
                 <p>Freshly prepared hygienic food. Click "Order Order" to start.</p>
 
                 <!-- Search Bar -->
-                <div class="search-container" style="max-width: 500px; margin: 30px auto 0; position: relative;">
-                    <input type="text" id="menuSearch" placeholder="Search for dishes..."
-                        style="width: 100%; padding: 16px 50px 16px 24px; border-radius: 50px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 8px 25px rgba(0,0,0,0.08); font-size: 1rem; outline: none; transition: all 0.3s ease;">
-                    <i class="fa-solid fa-search"
-                        style="position: absolute; right: 25px; top: 50%; transform: translateY(-50%); color: #7f8a3b; pointer-events: none;"></i>
+                <div class="menu-search-wrapper">
+                    <input type="text" id="menuSearch" class="menu-search-input"
+                        placeholder="Search for Pizza, Pasta, Rice...">
+                    <i class="fa-solid fa-search menu-search-icon"></i>
                 </div>
 
                 <!-- No Results Message -->
-                <div id="noResultsMsg" style="display: none; margin-top: 40px;">
-                    <i class="fa-solid fa-utensils" style="font-size: 3rem; color: #dfe1e5; margin-bottom: 15px;"></i>
-                    <h3 style="color: #6b6b6b; font-size: 1.2rem;">No delicious matches found!</h3>
-                    <p style="color: #999; font-size: 0.9rem;">Try searching for "Pizza", "Rice", or "Burger".</p>
+                <div id="noResultsMsg" style="display: none;">
+                    <i class="fa-solid fa-utensils" style="font-size: 3rem; color: #dfe1e5; margin-bottom: 20px;"></i>
+                    <h3 style="color: #6b6b6b; font-size: 1.25rem; font-weight: 600;">No delicious matches found!</h3>
+                    <p style="color: #999; font-size: 1rem;">Try searching for "Pizza", "Rice", or "Burger".</p>
                 </div>
             </div>
+
             <!-- Category Filter (Sticky) -->
-            <div class="container"
-                style="overflow-x: auto; white-space: nowrap; padding-bottom: 10px; margin-top: 40px;">
-                <a href="#south-indian" class="btn btn-secondary" style="border-radius: 20px; padding: 8px 20px;">South
-                    Indian</a>
-                <a href="#combos" class="btn btn-secondary" style="border-radius: 20px; padding: 8px 20px;">Combos</a>
-                <a href="#pizza" class="btn btn-secondary" style="border-radius: 20px; padding: 8px 20px;">Pizza</a>
-                <a href="#chinese" class="btn btn-secondary" style="border-radius: 20px; padding: 8px 20px;">Chinese</a>
-                <a href="#rice" class="btn btn-secondary" style="border-radius: 20px; padding: 8px 20px;">Rice</a>
-                <a href="#cakes" class="btn btn-secondary" style="border-radius: 20px; padding: 8px 20px;">Cakes</a>
-                <a href="#beverages" class="btn btn-secondary"
-                    style="border-radius: 20px; padding: 8px 20px;">Beverages</a>
+            <div class="category-filter-container container">
+                <a href="#south-indian" class="category-pill">South Indian</a>
+                <a href="#combos" class="category-pill">Combos</a>
+                <a href="#pizza" class="category-pill">Pizza</a>
+                <a href="#pasta" class="category-pill">Pasta</a>
+                <a href="#chinese" class="category-pill">Chinese</a>
+                <a href="#soups" class="category-pill">Soups</a>
+                <a href="#rice" class="category-pill">Rice</a>
+                <a href="#sizzlers" class="category-pill">Sizzlers</a>
+                <a href="#breads" class="category-pill">Breads</a>
+                <a href="#cakes" class="category-pill">Cakes</a>
+                <a href="#beverages" class="category-pill">Beverages</a>
             </div>
         </section>
 
@@ -94,6 +93,7 @@
                     <h2>South Indian</h2>
                 </div>
                 <div class="menu-grid">
+                    <!-- Idli Sambhar -->
                     <div class="menu-card">
                         <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500&q=80"
                             alt="Idli Sambhar" class="menu-img">
@@ -105,6 +105,7 @@
                                 class="btn btn-whatsapp btn-block mt-3">Order Now</a>
                         </div>
                     </div>
+                    <!-- Vada Sambhar -->
                     <div class="menu-card">
                         <img src="https://images.unsplash.com/photo-1626074353765-517a681e40be?w=500&q=80"
                             alt="Vada Sambhar" class="menu-img">
@@ -116,6 +117,53 @@
                                 class="btn btn-whatsapp btn-block mt-3">Order Now</a>
                         </div>
                     </div>
+                    <!-- Onion Uttapam -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1632766491746-fc3f1d3a4369?w=500&q=80"
+                            alt="Onion Uttapam" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Onion Uttapam <span class="menu-price">₹109</span></h3>
+                            <p class="text-muted">Thick, savory pancake topped with crunchy chopped onions and herbs.
+                            </p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Onion%20Uttapam"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Vegetable Uttapam -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1626082929543-5bab5f07db0c?w=500&q=80"
+                            alt="Vegetable Uttapam" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Vegetable Uttapam <span class="menu-price">₹109</span></h3>
+                            <p class="text-muted">Healthy rice pancake loaded with fresh mixed vegetables.</p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Vegetable%20Uttapam"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Lemon Rice -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1626082896492-766af4eb6501?w=500&q=80"
+                            alt="Lemon Rice" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Lemon Rice <span class="menu-price">₹129</span></h3>
+                            <p class="text-muted">Tangy and aromatic rice flavored with lemon zest and tempered spices.
+                            </p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Lemon%20Rice"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Plain Dosa -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1631515243349-e060360a08e6?w=500&q=80"
+                            alt="Plain Dosa" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Plain Dosa <span class="menu-price">₹109</span></h3>
+                            <p class="text-muted">Classic crispy golden crepe served with sambhar and chutneys.</p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Plain%20Dosa"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Masala Dosa -->
                     <div class="menu-card">
                         <img src="https://images.unsplash.com/photo-1668236543090-d2f896b6574c?w=500&q=80"
                             alt="Masala Dosa" class="menu-img">
@@ -127,6 +175,19 @@
                                 class="btn btn-whatsapp btn-block mt-3">Order Now</a>
                         </div>
                     </div>
+                    <!-- Onion Dosa -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1626082928045-318e803f2601?w=500&q=80"
+                            alt="Onion Dosa" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Onion Dosa <span class="menu-price">₹129</span></h3>
+                            <p class="text-muted">Crispy dosa sprinkled generously with chopped onions and coriander.
+                            </p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Onion%20Dosa"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Mysore Masala Dosa -->
                     <div class="menu-card">
                         <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500&q=80"
                             alt="Mysore Masala Dosa" class="menu-img">
@@ -138,14 +199,25 @@
                                 class="btn btn-whatsapp btn-block mt-3">Order Now</a>
                         </div>
                     </div>
+                    <!-- Rava Dosa -->
                     <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1632766491746-fc3f1d3a4369?w=500&q=80"
-                            alt="Onion Uttapam" class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1626082928886-44474e0d9b15?w=500&q=80"
+                            alt="Rava Dosa" class="menu-img">
                         <div class="menu-content">
-                            <h3 class="menu-title">Onion Uttapam <span class="menu-price">₹109</span></h3>
-                            <p class="text-muted">Thick, savory pancake topped with crunchy chopped onions and herbs.
-                            </p>
-                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Onion%20Uttapam"
+                            <h3 class="menu-title">Rava Dosa <span class="menu-price">₹169</span></h3>
+                            <p class="text-muted">Thin, crispy semolina crepe with a unique netted texture.</p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Rava%20Dosa"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Family Masala Dosa -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1668236543090-d2f896b6574c?w=500&q=80"
+                            alt="Family Masala Dosa" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Family Masala Dosa <span class="menu-price">₹299</span></h3>
+                            <p class="text-muted">Giant-sized masala dosa perfect for sharing with the whole family.</p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Family%20Masala%20Dosa"
                                 class="btn btn-whatsapp btn-block mt-3">Order Now</a>
                         </div>
                     </div>
@@ -402,6 +474,41 @@
             </div>
         </section>
 
+        <!-- Pasta -->
+        <section id="pasta" class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Pasta</h2>
+                </div>
+                <div class="menu-grid">
+                    <!-- Alfredo Pasta -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=500&q=80"
+                            alt="Alfredo Pasta" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Alfredo Pasta <span class="menu-price">₹209</span></h3>
+                            <p class="text-muted">Creamy white sauce pasta tossed with fresh herbs, garlic, and parmesan
+                                cheese.</p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Alfredo%20Pasta"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Arrabiata Pasta -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1574868273713-39d67d7164cf?w=500&q=80"
+                            alt="Arrabiata Pasta" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Arrabiata Pasta <span class="menu-price">₹199</span></h3>
+                            <p class="text-muted">Spicy red sauce pasta cooked with tomatoes, garlic, and red chili
+                                flakes.</p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Arrabiata%20Pasta"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Chinese -->
         <section id="chinese" class="section-padding" style="background-color: #f9f9f9;">
             <div class="container">
@@ -409,6 +516,7 @@
                     <h2>Chinese</h2>
                 </div>
                 <div class="menu-grid">
+                    <!-- Veg Noodles -->
                     <div class="menu-card">
                         <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&q=80"
                             alt="Veg Noodles" class="menu-img">
@@ -419,6 +527,7 @@
                                 class="btn btn-whatsapp btn-block mt-3">Order Now</a>
                         </div>
                     </div>
+                    <!-- Veg Fried Rice -->
                     <div class="menu-card">
                         <img src="https://images.unsplash.com/photo-1603133872878-684f1084261d?w=500&q=80"
                             alt="Veg Fried Rice" class="menu-img">
@@ -430,6 +539,7 @@
                                 class="btn btn-whatsapp btn-block mt-3">Order Now</a>
                         </div>
                     </div>
+                    <!-- Veg Manchurian Dry -->
                     <div class="menu-card">
                         <img src="https://images.unsplash.com/photo-1525755617299-72594904ad16?w=500&q=80"
                             alt="Veg Manchurian" class="menu-img">
@@ -440,13 +550,93 @@
                                 class="btn btn-whatsapp btn-block mt-3">Order Now</a>
                         </div>
                     </div>
+                    <!-- Veg Manchurian Gravy -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1525755617299-72594904ad16?w=500&q=80"
+                            alt="Veg Manchurian Gravy" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Veg Manchurian Gravy <span class="menu-price">₹209</span></h3>
+                            <p class="text-muted">Vegetable balls simmered in a rich, savory Chinese style brown gravy.
+                            </p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Veg%20Manchurian%20Gravy"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Chilli Paneer Dry -->
                     <div class="menu-card">
                         <img src="https://images.unsplash.com/photo-1521305417081-3aa6669c3623?w=500&q=80"
-                            alt="Chilli Paneer" class="menu-img">
+                            alt="Chilli Paneer Dry" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Chilli Paneer Dry <span class="menu-price">₹209</span></h3>
+                            <p class="text-muted">Spicy stir-fried paneer cubes tossed with onions, capsicum, and
+                                chilies.</p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Chilli%20Paneer%20Dry"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Chilli Paneer Gravy -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1521305417081-3aa6669c3623?w=500&q=80"
+                            alt="Chilli Paneer Gravy" class="menu-img">
                         <div class="menu-content">
                             <h3 class="menu-title">Chilli Paneer Gravy <span class="menu-price">₹219</span></h3>
                             <p class="text-muted">Soft paneer cubes in a spicy, flavorful soy-based gravy.</p>
                             <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Chilli%20Paneer%20Gravy"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Soups -->
+        <section id="soups" class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Soups</h2>
+                </div>
+                <div class="menu-grid">
+                    <!-- Tomato Soup -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=500&q=80"
+                            alt="Tomato Soup" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Tomato Soup <span class="menu-price">₹109</span></h3>
+                            <p class="text-muted">Classic comfort soup made with ripe tomatoes and fresh herbs.</p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Tomato%20Soup"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Hot & Sour Soup -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1511910849309-0dffb87863b3?w=500&q=80"
+                            alt="Hot & Sour Soup" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Hot & Sour Soup <span class="menu-price">₹109</span></h3>
+                            <p class="text-muted">Spicy and tangy soup loaded with crunchy vegetables.</p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Hot%20&%20Sour%20Soup"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Sweet Corn Soup -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=500&q=80"
+                            alt="Sweet Corn Soup" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Sweet Corn Soup <span class="menu-price">₹109</span></h3>
+                            <p class="text-muted">Creamy and comforting soup made with tender sweet corn kernels.</p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Sweet%20Corn%20Soup"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Manchow Soup -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=500&q=80"
+                            alt="Manchow Soup" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Manchow Soup <span class="menu-price">₹119</span></h3>
+                            <p class="text-muted">Popular Indo-Chinese soup topped with crispy fried noodles.</p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Manchow%20Soup"
                                 class="btn btn-whatsapp btn-block mt-3">Order Now</a>
                         </div>
                     </div>
@@ -495,189 +685,383 @@
                                 class="btn btn-whatsapp btn-block mt-3">Order Now</a>
                         </div>
                     </div>
+        </section>
+
+        <!-- Sizzlers & Platters -->
+        <section id="sizzlers" class="section-padding" style="background-color: #f9f9f9;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Sizzlers & Platters</h2>
+                </div>
+                <div class="menu-grid">
+                    <!-- Mix Veg Sizzler -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1599021408226-928cc7a530f0?w=500&q=80"
+                            alt="Mix Veg Sizzler" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Mix Veg Sizzler <span class="menu-price">₹249</span></h3>
+                            <p class="text-muted">A piping hot platter of grilled vegetables, fries, and rice served
+                                with savory sauce.</p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Mix%20Veg%20Sizzler"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Chinese Combo Sizzler -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=500&q=80"
+                            alt="Chinese Combo Sizzler" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Chinese Combo Sizzler <span class="menu-price">₹249</span></h3>
+                            <p class="text-muted">Sizzling fusion of noodles, manchurian, and stir-fried veggies.</p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Chinese%20Combo%20Sizzler"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Momo Platter -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1626082927389-d31642940f00?w=500&q=80"
+                            alt="Momo Platter" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Momo Platter <span class="menu-price">₹249</span></h3>
+                            <p class="text-muted">Assortment of steamed, fried, and tandoori momos served with spicy
+                                dips.</p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Momo%20Platter"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Kebab Platter -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=500&q=80"
+                            alt="Kebab Platter" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Kebab Platter <span class="menu-price">₹329</span></h3>
+                            <p class="text-muted">Delicious variety of grilled veg kebabs served with green chutney.</p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Kebab%20Platter"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Chinese Platter -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1552611052-33e04de081de?w=500&q=80"
+                            alt="Chinese Platter" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Chinese Platter <span class="menu-price">₹329</span></h3>
+                            <p class="text-muted">Grand feast of fried rice, noodles, spring rolls, and manchurian
+                                gravy.</p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Chinese%20Platter"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- Tandoori Platter -->
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&q=80"
+                            alt="Tandoori Platter" class="menu-img">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Tandoori Platter <span class="menu-price">₹349</span></h3>
+                            <p class="text-muted">Smoky tandoori paneer, mushrooms, and veggies marinated to perfection.
+                            </p>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Tandoori%20Platter"
+                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Cakes & Desserts -->
-        <section id="cakes" class="section-padding">
+        <!-- Breads -->
+        <section id="breads" class="section-padding">
             <div class="container">
                 <div class="section-title">
-                    <h2>Sweets & Cakes</h2>
+                    <h2>Breads</h2>
                 </div>
                 <div class="menu-grid">
-                    <!-- Gulab Jamun -->
+                    <!-- Tandoori Roti -->
                     <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1590483038686-2aee1410cb23?w=500&q=80"
-                            alt="Gulab Jamun" class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1626074353765-517a681e40be?w=500&q=80"
+                            alt="Tandoori Roti" class="menu-img">
                         <div class="menu-content">
-                            <h3 class="menu-title">Gulab Jamun <span class="menu-price">₹60</span></h3>
-                            <p class="text-muted">Soft, melt-in-the-mouth berry sized balls soaked in rose-flavored
-                                sugar syrup.</p>
-                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Gulab%20Jamun"
+                            <h3 class="menu-title">Tandoori Roti <span class="menu-price">₹30/40/50</span></h3>
+                            <p class="text-muted">Freshly baked in a clay oven. Choose from Plain, Butter, or Garlic.
+                            </p>
+                            <div class="size-selector" data-item-name="Tandoori Roti">
+                                <label class="size-option">
+                                    <input type="radio" name="roti_type" value="Plain" data-price="30" checked>
+                                    <span>Plain</span>
+                                </label>
+                                <label class="size-option">
+                                    <input type="radio" name="roti_type" value="Butter" data-price="40">
+                                    <span>Butter</span>
+                                </label>
+                                <label class="size-option">
+                                    <input type="radio" name="roti_type" value="Garlic" data-price="50">
+                                    <span>Garlic</span>
+                                </label>
+                            </div>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Tandoori%20Roti"
                                 class="btn btn-whatsapp btn-block mt-3">Order Now</a>
                         </div>
                     </div>
-                    <!-- Ice Cream -->
+                    <!-- Naan -->
                     <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=500&q=80"
-                            alt="Ice Cream" class="menu-img">
-                        <div class="menu-content">
-                            <h3 class="menu-title">Ice Cream <span class="menu-price">₹80</span></h3>
-                            <p class="text-muted">Creamy and rich vanilla or chocolate ice cream scoops.</p>
-                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Ice%20Cream"
-                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
-                        </div>
-                    </div>
-                    <!-- Waffles -->
-                    <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1568051243851-f9b13614619c?w=500&q=80" alt="Waffles"
+                        <img src="https://images.unsplash.com/photo-1626082928886-44474e0d9b15?w=500&q=80" alt="Naan"
                             class="menu-img">
                         <div class="menu-content">
-                            <h3 class="menu-title">Waffles with Chocolate <span class="menu-price">₹160</span></h3>
-                            <p class="text-muted">Crispy warm waffles drizzled generously with rich chocolate sauce.</p>
-                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Waffles"
+                            <h3 class="menu-title">Naan <span class="menu-price">₹35/45/55/65</span></h3>
+                            <p class="text-muted">Soft and fluffy leavened bread. Available in multiple varieties.</p>
+                            <div class="size-selector" data-item-name="Naan">
+                                <label class="size-option">
+                                    <input type="radio" name="naan_type" value="Plain" data-price="35" checked>
+                                    <span>Plain</span>
+                                </label>
+                                <label class="size-option">
+                                    <input type="radio" name="naan_type" value="Butter" data-price="45">
+                                    <span>Butter</span>
+                                </label>
+                                <label class="size-option">
+                                    <input type="radio" name="naan_type" value="Garlic" data-price="55">
+                                    <span>Garlic</span>
+                                </label>
+                                <label class="size-option">
+                                    <input type="radio" name="naan_type" value="Cheese" data-price="65">
+                                    <span>Cheese</span>
+                                </label>
+                            </div>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Naan"
                                 class="btn btn-whatsapp btn-block mt-3">Order Now</a>
                         </div>
                     </div>
-                    <!-- Sizzler Brownie -->
+                    <!-- Kulcha -->
                     <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476d?w=500&q=80"
-                            alt="Sizzler Brownie" class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1626082929543-5bab5f07db0c?w=500&q=80" alt="Kulcha"
+                            class="menu-img">
                         <div class="menu-content">
-                            <h3 class="menu-title">Sizzler Brownie <span class="menu-price">₹235</span></h3>
-                            <p class="text-muted">Hot fudge brownie served on a sizzler plate with vanilla ice cream.
-                            </p>
-                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Sizzler%20Brownie"
+                            <h3 class="menu-title">Kulcha <span class="menu-price">₹55/65/75</span></h3>
+                            <p class="text-muted">Mildly leavened flatbread. Choose from Plain, Butter, or Masala.</p>
+                            <div class="size-selector" data-item-name="Kulcha">
+                                <label class="size-option">
+                                    <input type="radio" name="kulcha_type" value="Plain" data-price="55" checked>
+                                    <span>Plain</span>
+                                </label>
+                                <label class="size-option">
+                                    <input type="radio" name="kulcha_type" value="Butter" data-price="65">
+                                    <span>Butter</span>
+                                </label>
+                                <label class="size-option">
+                                    <input type="radio" name="kulcha_type" value="Masala" data-price="75">
+                                    <span>Masala</span>
+                                </label>
+                            </div>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Kulcha"
                                 class="btn btn-whatsapp btn-block mt-3">Order Now</a>
                         </div>
                     </div>
-                    <!-- Choco Fantasy -->
+                    <!-- Paratha -->
                     <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1606312619070-d48b706521bf?w=500&q=80"
-                            alt="Choco Fantasy" class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1626082927389-d31642940f00?w=500&q=80" alt="Paratha"
+                            class="menu-img">
                         <div class="menu-content">
-                            <h3 class="menu-title">Choco Fantasy <span class="menu-price">₹235</span></h3>
-                            <p class="text-muted">A dream dessert for chocolate lovers, loaded with gooey chocolate
-                                goodness.</p>
-                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Choco%20Fantasy"
+                            <h3 class="menu-title">Paratha <span class="menu-price">₹35/45</span></h3>
+                            <p class="text-muted">Layered whole wheat flatbread, served Plain or Buttered.</p>
+                            <div class="size-selector" data-item-name="Paratha">
+                                <label class="size-option">
+                                    <input type="radio" name="paratha_type" value="Plain" data-price="35" checked>
+                                    <span>Plain</span>
+                                </label>
+                                <label class="size-option">
+                                    <input type="radio" name="paratha_type" value="Butter" data-price="45">
+                                    <span>Butter</span>
+                                </label>
+                            </div>
+                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Paratha"
                                 class="btn btn-whatsapp btn-block mt-3">Order Now</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Beverages -->
-        <section id="beverages" class="section-padding" style="background-color: #f9f9f9;">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Beverages</h2>
-                </div>
-                <div class="menu-grid">
-                    <!-- Cold Coffee -->
-                    <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1517701604599-bb29b5c7fa53?w=500&q=80"
-                            alt="Cold Coffee" class="menu-img">
-                        <div class="menu-content">
-                            <h3 class="menu-title">Cold Coffee <span class="menu-price">₹69</span></h3>
-                            <p class="text-muted">Classic chilled coffee blend, creamy, frothy, and refreshing.</p>
-                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Cold%20Coffee"
-                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
-                        </div>
+            <!-- Cakes & Desserts -->
+            <section id="cakes" class="section-padding">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Sweets & Cakes</h2>
                     </div>
-                    <!-- Ice Tea -->
-                    <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=500&q=80" alt="Ice Tea"
-                            class="menu-img">
-                        <div class="menu-content">
-                            <h3 class="menu-title">Ice Tea <span class="menu-price">₹99</span></h3>
-                            <p class="text-muted">Refreshing brewed tea served chilled with a hint of lemon.</p>
-                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Ice%20Tea"
-                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                    <div class="menu-grid">
+                        <!-- Gulab Jamun -->
+                        <div class="menu-card">
+                            <img src="https://images.unsplash.com/photo-1590483038686-2aee1410cb23?w=500&q=80"
+                                alt="Gulab Jamun" class="menu-img">
+                            <div class="menu-content">
+                                <h3 class="menu-title">Gulab Jamun <span class="menu-price">₹60</span></h3>
+                                <p class="text-muted">Soft, melt-in-the-mouth berry sized balls soaked in rose-flavored
+                                    sugar syrup.</p>
+                                <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Gulab%20Jamun"
+                                    class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Peach Ice Tea -->
-                    <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500&q=80"
-                            alt="Peach Ice Tea" class="menu-img">
-                        <div class="menu-content">
-                            <h3 class="menu-title">Peach Ice Tea <span class="menu-price">₹99</span></h3>
-                            <p class="text-muted">Sweet and fruity iced tea infused with natural peach flavor.</p>
-                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Peach%20Ice%20Tea"
-                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        <!-- Ice Cream -->
+                        <div class="menu-card">
+                            <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=500&q=80"
+                                alt="Ice Cream" class="menu-img">
+                            <div class="menu-content">
+                                <h3 class="menu-title">Ice Cream <span class="menu-price">₹80</span></h3>
+                                <p class="text-muted">Creamy and rich vanilla or chocolate ice cream scoops.</p>
+                                <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Ice%20Cream"
+                                    class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Boba Tea -->
-                    <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=500&q=80" alt="Boba Tea"
-                            class="menu-img">
-                        <div class="menu-content">
-                            <h3 class="menu-title">Boba Tea (All Variants) <span class="menu-price">₹129</span></h3>
-                            <p class="text-muted">Trendy milk tea with chewy tapioca pearls in various fruit flavors.
-                            </p>
-                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Boba%20Tea"
-                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        <!-- Waffles -->
+                        <div class="menu-card">
+                            <img src="https://images.unsplash.com/photo-1568051243851-f9b13614619c?w=500&q=80"
+                                alt="Waffles" class="menu-img">
+                            <div class="menu-content">
+                                <h3 class="menu-title">Waffles with Chocolate <span class="menu-price">₹160</span></h3>
+                                <p class="text-muted">Crispy warm waffles drizzled generously with rich chocolate sauce.
+                                </p>
+                                <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Waffles"
+                                    class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Masala Lemonade -->
-                    <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&q=80"
-                            alt="Masala Lemonade" class="menu-img">
-                        <div class="menu-content">
-                            <h3 class="menu-title">Masala Lemonade <span class="menu-price">₹99</span></h3>
-                            <p class="text-muted">Tangy lemon soda spiced with rock salt and Indian masala.</p>
-                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Masala%20Lemonade"
-                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        <!-- Sizzler Brownie -->
+                        <div class="menu-card">
+                            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476d?w=500&q=80"
+                                alt="Sizzler Brownie" class="menu-img">
+                            <div class="menu-content">
+                                <h3 class="menu-title">Sizzler Brownie <span class="menu-price">₹235</span></h3>
+                                <p class="text-muted">Hot fudge brownie served on a sizzler plate with vanilla ice
+                                    cream.
+                                </p>
+                                <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Sizzler%20Brownie"
+                                    class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Virgin Mojito -->
-                    <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&q=80"
-                            alt="Virgin Mojito" class="menu-img">
-                        <div class="menu-content">
-                            <h3 class="menu-title">Virgin Mojito <span class="menu-price">₹99</span></h3>
-                            <p class="text-muted">Zesty lime and mint cooler topped with sparkling soda.</p>
-                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Virgin%20Mojito"
-                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
-                        </div>
-                    </div>
-                    <!-- Mineral Water -->
-                    <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?w=500&q=80"
-                            alt="Mineral Water" class="menu-img">
-                        <div class="menu-content">
-                            <h3 class="menu-title">Mineral Water <span class="menu-price">MRP</span></h3>
-                            <p class="text-muted">Chilled bottled water to keep you completely hydrated.</p>
-                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Mineral%20Water"
-                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
-                        </div>
-                    </div>
-                    <!-- Cold Drink -->
-                    <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&q=80"
-                            alt="Cold Drink" class="menu-img">
-                        <div class="menu-content">
-                            <h3 class="menu-title">Cold Drink <span class="menu-price">₹40</span></h3>
-                            <p class="text-muted">Chilled carbonated soft drinks to pair perfectly with your meal.</p>
-                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Cold%20Drink"
-                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
-                        </div>
-                    </div>
-                    <!-- Red Bull -->
-                    <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=500&q=80" alt="Red Bull"
-                            class="menu-img">
-                        <div class="menu-content">
-                            <h3 class="menu-title">Red Bull <span class="menu-price">₹125</span></h3>
-                            <p class="text-muted">High-energy drink to give you wings and keep you going.</p>
-                            <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Red%20Bull"
-                                class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                        <!-- Choco Fantasy -->
+                        <div class="menu-card">
+                            <img src="https://images.unsplash.com/photo-1606312619070-d48b706521bf?w=500&q=80"
+                                alt="Choco Fantasy" class="menu-img">
+                            <div class="menu-content">
+                                <h3 class="menu-title">Choco Fantasy <span class="menu-price">₹235</span></h3>
+                                <p class="text-muted">A dream dessert for chocolate lovers, loaded with gooey chocolate
+                                    goodness.</p>
+                                <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Choco%20Fantasy"
+                                    class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <!-- Beverages -->
+            <section id="beverages" class="section-padding" style="background-color: #f9f9f9;">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Beverages</h2>
+                    </div>
+                    <div class="menu-grid">
+                        <!-- Cold Coffee -->
+                        <div class="menu-card">
+                            <img src="https://images.unsplash.com/photo-1517701604599-bb29b5c7fa53?w=500&q=80"
+                                alt="Cold Coffee" class="menu-img">
+                            <div class="menu-content">
+                                <h3 class="menu-title">Cold Coffee <span class="menu-price">₹69</span></h3>
+                                <p class="text-muted">Classic chilled coffee blend, creamy, frothy, and refreshing.</p>
+                                <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Cold%20Coffee"
+                                    class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                            </div>
+                        </div>
+                        <!-- Ice Tea -->
+                        <div class="menu-card">
+                            <img src="https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=500&q=80"
+                                alt="Ice Tea" class="menu-img">
+                            <div class="menu-content">
+                                <h3 class="menu-title">Ice Tea <span class="menu-price">₹99</span></h3>
+                                <p class="text-muted">Refreshing brewed tea served chilled with a hint of lemon.</p>
+                                <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Ice%20Tea"
+                                    class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                            </div>
+                        </div>
+                        <!-- Peach Ice Tea -->
+                        <div class="menu-card">
+                            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500&q=80"
+                                alt="Peach Ice Tea" class="menu-img">
+                            <div class="menu-content">
+                                <h3 class="menu-title">Peach Ice Tea <span class="menu-price">₹99</span></h3>
+                                <p class="text-muted">Sweet and fruity iced tea infused with natural peach flavor.</p>
+                                <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Peach%20Ice%20Tea"
+                                    class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                            </div>
+                        </div>
+                        <!-- Boba Tea -->
+                        <div class="menu-card">
+                            <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=500&q=80"
+                                alt="Boba Tea" class="menu-img">
+                            <div class="menu-content">
+                                <h3 class="menu-title">Boba Tea (All Variants) <span class="menu-price">₹129</span></h3>
+                                <p class="text-muted">Trendy milk tea with chewy tapioca pearls in various fruit
+                                    flavors.
+                                </p>
+                                <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Boba%20Tea"
+                                    class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                            </div>
+                        </div>
+                        <!-- Masala Lemonade -->
+                        <div class="menu-card">
+                            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&q=80"
+                                alt="Masala Lemonade" class="menu-img">
+                            <div class="menu-content">
+                                <h3 class="menu-title">Masala Lemonade <span class="menu-price">₹99</span></h3>
+                                <p class="text-muted">Tangy lemon soda spiced with rock salt and Indian masala.</p>
+                                <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Masala%20Lemonade"
+                                    class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                            </div>
+                        </div>
+                        <!-- Virgin Mojito -->
+                        <div class="menu-card">
+                            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&q=80"
+                                alt="Virgin Mojito" class="menu-img">
+                            <div class="menu-content">
+                                <h3 class="menu-title">Virgin Mojito <span class="menu-price">₹99</span></h3>
+                                <p class="text-muted">Zesty lime and mint cooler topped with sparkling soda.</p>
+                                <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Virgin%20Mojito"
+                                    class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                            </div>
+                        </div>
+                        <!-- Mineral Water -->
+                        <div class="menu-card">
+                            <img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?w=500&q=80"
+                                alt="Mineral Water" class="menu-img">
+                            <div class="menu-content">
+                                <h3 class="menu-title">Mineral Water <span class="menu-price">MRP</span></h3>
+                                <p class="text-muted">Chilled bottled water to keep you completely hydrated.</p>
+                                <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Mineral%20Water"
+                                    class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                            </div>
+                        </div>
+                        <!-- Cold Drink -->
+                        <div class="menu-card">
+                            <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&q=80"
+                                alt="Cold Drink" class="menu-img">
+                            <div class="menu-content">
+                                <h3 class="menu-title">Cold Drink <span class="menu-price">₹40</span></h3>
+                                <p class="text-muted">Chilled carbonated soft drinks to pair perfectly with your meal.
+                                </p>
+                                <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Cold%20Drink"
+                                    class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                            </div>
+                        </div>
+                        <!-- Red Bull -->
+                        <div class="menu-card">
+                            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=500&q=80"
+                                alt="Red Bull" class="menu-img">
+                            <div class="menu-content">
+                                <h3 class="menu-title">Red Bull <span class="menu-price">₹125</span></h3>
+                                <p class="text-muted">High-energy drink to give you wings and keep you going.</p>
+                                <a href="https://wa.me/916262707048?text=I%20want%20to%20order%20Red%20Bull"
+                                    class="btn btn-whatsapp btn-block mt-3">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
     </main>
 
